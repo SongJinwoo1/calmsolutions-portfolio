@@ -1,0 +1,70 @@
+/* Calm Solutions | Identity Animation
+   This file manages the Sine Wave logo drawing effect.
+*/
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transform: var(--gpu-accelerate);
+}
+
+.logo-svg {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(26, 60, 90, 0.1));
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* حركة رسم الخط (The Sine Wave) */
+.logo-path {
+    stroke: var(--primary-navy); /* الافتراضي */
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    
+    /* تقنية الرسم البرمجي */
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* النقطة المركزية (The Stability Dot) */
+.logo-dot {
+    fill: var(--primary-navy);
+    opacity: 0;
+    animation: fadeInDot 0.5s ease 2.5s forwards;
+}
+
+/* أنيميشن الرسم */
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeInDot {
+    to {
+        opacity: 1;
+    }
+}
+
+/* تفاعل اللوجو مع الـ Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .logo-path {
+        stroke: var(--matte-gold);
+    }
+    .logo-dot {
+        fill: var(--matte-gold);
+    }
+    .logo-svg {
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.2));
+    }
+}
+
+/* تأثير النبض الخفيف عند الوقوف عليه */
+.logo-svg:hover {
+    transform: scale(1.05);
+}
