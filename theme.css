@@ -1,61 +1,37 @@
-/* Calm Solutions | Theme & Modes Logic
-   This file controls the visual "Mood" of the showroom.
-*/
-
-/* 1. الوضع الساطع (Light Mode - The Royal Office) */
-body {
-    background-color: var(--soft-gray);
-    color: var(--primary-navy);
-    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+:root {
+    --bg-color: #0a0a0a;
+    --brand-color: #d4af37;
+    --text-main: #d4af37;
+    --text-gray: #bbb;
+    --glass: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(212, 175, 55, 0.1);
 }
 
-header h1 {
-    color: var(--primary-navy);
+body.light-mode {
+    --bg-color: #f4f4f4;
+    --brand-color: #1a3c5a;
+    --text-main: #1a3c5a;
+    --text-gray: #555;
+    --glass: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(26, 60, 90, 0.1);
 }
 
-.badge {
-    background-color: var(--primary-navy);
-    color: var(--pure-white);
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
 }
 
-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--text-gray);
-}
-
-/* 2. الوضع الداكن (Dark Mode - The Spaceship) */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--deep-black);
-        color: var(--matte-gold);
-    }
-
-    header h1 {
-        color: var(--matte-gold);
-    }
-
-    .greeting-text {
-        color: rgba(212, 175, 55, 0.7); /* ذهبي شفاف قليلاً للهدوء */
-    }
-
-    .bento-item {
-        background: rgba(255, 255, 255, 0.03); /* زجاج داكن جداً */
-        border: 1px solid rgba(212, 175, 55, 0.1);
-    }
-
-    .badge {
-        background-color: var(--matte-gold);
-        color: var(--deep-black);
-    }
-
-    footer {
-        border-top: 1px solid rgba(212, 175, 55, 0.1);
-        color: var(--matte-gold);
-        opacity: 0.6;
-    }
-}
-
-/* تحسين الأداء: منع "وميض" الألوان عند التحميل */
-.no-transition {
-    transition: none !important;
+.theme-button {
+    background: var(--glass);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    padding: 8px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.3s;
 }
