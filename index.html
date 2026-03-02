@@ -3,46 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm Solutions | Professional Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Calm Solutions | Portfolio 2026</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#001B3D] text-white font-inter overflow-x-hidden">
+<body>
 
-    <div class="fixed inset-0 z-[-1] cosmic-bg"></div>
+    <div id="custom-cursor"></div>
 
-    <nav class="fixed top-0 w-full z-50 glass-effect py-4 px-8 flex justify-between items-center">
-        <div class="text-[#D4AF37] font-playfair text-xl tracking-wider uppercase">Calm Solutions</div>
-        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-            <button onclick="filterProjects('all')" class="tab-btn active-tab transition duration-300">الكل</button>
-            <button onclick="filterProjects('medical')" class="tab-btn transition duration-300">الطب</button>
-            <button onclick="filterProjects('food')" class="tab-btn transition duration-300">المطاعم</button>
-        </div>
-    </nav>
+    <div class="space-bg" style="background-image: url('74718.jpg');"></div>
 
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <div class="glass-effect p-12 rounded-[40px] max-w-3xl transform transition hover:scale-[1.02] duration-700 shadow-2xl">
-            <div class="mb-8 flex justify-center">
-                <svg width="150" height="70" viewBox="0 0 300 150" class="logo-svg">
-                    <path class="wave-path" d="M120,40 C135,25 165,25 180,40 S210,55 225,40" stroke="#D4AF37" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <circle cx="172" cy="36" r="4" fill="#D4AF37"/>
-                </svg>
+    <header class="glass-header">
+        <img src="74755.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#projects">أعمالنا</a></li>
+                <li><a href="#contact" class="btn-gold">اطلب مشروعك</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="fade-in">نحن نبني <span class="gold-text">المستقبل الرقمي</span></h1>
+        <p>Calm Solutions: حلول هادئة لأعقد التحديات البرمجية في أي تخصص.</p>
+    </section>
+
+    <section id="projects" class="portfolio-grid">
+        <div class="card glass">
+            <div class="card-media">
+                <video autoplay muted loop>
+                    <source src="74754.mp4" type="video/mp4">
+                </video>
             </div>
-            <h1 class="font-playfair text-5xl md:text-7xl text-[#D4AF37] mb-6 leading-tight">Calm Solutions</h1>
-            <p class="text-lg md:text-xl font-light tracking-[0.4em] uppercase opacity-60">Software Solutions</p>
+            <div class="card-body">
+                <h3>الأنظمة الطبية ذكية</h3>
+                <p>تطوير Dashboards متقدمة لمراقبة الوظائف الحيوية بدقة متناهية.</p>
+            </div>
+        </div>
+
+        <div class="card glass">
+            <div class="card-media" style="background-image: url('74717.jpg');"></div>
+            <div class="card-body">
+                <h3>منصات التجارة الفاخرة</h3>
+                <p>تصميم متاجر إلكترونية بهوية بصرية فريدة وأداء برمي فائق.</p>
+            </div>
         </div>
     </section>
 
-    <section class="py-24 px-8 max-w-7xl mx-auto">
-        <h2 class="font-playfair text-4xl text-center mb-20 text-[#D4AF37]">مشاريعنا المختارة</h2>
-        <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            </div>
-    </section>
-
-    <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="whatsapp-btn fixed bottom-10 left-10 bg-[#25D366] p-5 rounded-full z-50 shadow-2xl">
-        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.407 3.481 2.242 2.242 3.48 5.226 3.481 8.408-.003 6.555-5.338 11.89-11.893 11.891-2.099 0-4.146-.547-5.949-1.586L0 24zm11.887-20.469c-4.714 0-8.551 3.837-8.553 8.552 0 1.515.394 2.994 1.144 4.294l.125.217-1.001 3.656 3.738-.98.21.125c1.247.74 2.673 1.13 4.131 1.13 4.715 0 8.553-3.837 8.555-8.553 0-2.285-.889-4.433-2.502-6.047-1.614-1.613-3.762-2.503-6.048-2.503zm4.68 12.025c-.256-.128-1.516-.748-1.751-.833-.235-.085-.406-.128-.576.128-.17.256-.658.832-.807.999-.149.167-.299.188-.555.06-2.059-1.029-3.324-2.227-4.195-3.725-.23-.395.23-.367.659-1.22.065-.133.033-.248-.016-.347-.049-.099-.444-1.071-.61-1.47-.161-.389-.323-.335-.444-.34-.114-.007-.247-.007-.381-.007-.134 0-.353.05-.538.256-.185.206-.708.692-.708 1.688 0 .996.724 1.959.825 2.092.101.133 1.425 2.176 3.452 3.053.482.208.859.332 1.153.425.485.154.927.132 1.277.08.39-.058 1.198-.49 1.368-.963.17-.472.17-.876.119-.96-.05-.084-.188-.133-.444-.26z"/></svg>
-    </a>
+    <div id="dev-console" class="hidden-panel glass">
+        <h2>Dev Console v2.6</h2>
+        <p>Status: <span class="online">Active</span></p>
+        <button onclick="closeConsole()">إغلاق</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
