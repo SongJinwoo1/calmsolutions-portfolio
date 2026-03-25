@@ -1,13 +1,35 @@
-// تأثير الخلفية
+// تحسين أداء وإعدادات particles
 particlesJS("particles-js", {
     particles: {
-        number: { value: 40 },
+        number: { value: 25, density: { enable: true, value_area: 800 } },
         color: { value: "#9d4edd" },
-        opacity: { value: 0.3 },
-        size: { value: 2 },
-        line_linked: { enable: true, distance: 130, color: "#9d4edd", opacity: 0.2 },
-        move: { speed: 1 }
-    }
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: false },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 130, color: "#9d4edd", opacity: 0.2, width: 1 },
+        move: { 
+            enable: true, // تم التصحيح: كانت مفقودة مما جعل الجزيئات ثابتة
+            speed: 1,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+        }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+        },
+        modes: {
+            grab: { distance: 140, line_linked: { opacity: 1 } },
+            push: { particles_nb: 4 }
+        }
+    },
+    retina_detect: true
 });
 
 const form = document.getElementById('direct-whatsapp-form');
@@ -15,22 +37,33 @@ const form = document.getElementById('direct-whatsapp-form');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // جلب البيانات
     const name = document.getElementById('userName').value;
     const age = document.getElementById('userAge').value;
     const level = document.getElementById('userLevel').value;
 
-    const adminPhone = "201055719273"; // رقم نائبك المصري
-    const groupLink = "https://chat.whatsapp.com/LX6YlavRiSWDUWSxVvGxD9"; // رابط الجروب
+    const adminPhone = "201055719273";
+    const groupLink = "https://chat.whatsapp.com/LX6YlavRiSWDUWSxVvGxD9";
 
-    // تنسيق الرسالة المرسلة للنائب
-    const message = 🚀 *طلب انضمام جديد لـ Arise Tech*%0A%0A👤 *الاسم:* ${name}%0A🎂 *العمر:* ${age}%0A💻 *المستوى:* ${level};
+    // تحسين تنسيق الرسالة
+    const message = encodeURIComponent(
+`🚀 طلب انضمام جديد لـ Arise Tech
 
-    // فتح الواتساب لإرسال البيانات
-    window.open(https://wa.me/${adminPhone}?text=${message}, '_blank');
+👤 الاسم: ${name}
+🎂 العمر: ${age}
+💻 المستوى: ${level}`
+    );
 
-    // تحويل الموقع الأصلي لرابط الجروب بعد ثانية واحدة
+    // فتح واتساب في نافذة جديدة
+    const whatsappUrl = `https://wa.me/${adminPhone}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+
+    // تحويل للجروب بعد ثانية واحدة
     setTimeout(() => {
         window.location.href = groupLink;
     }, 1000);
+
+    // تفريغ الحقول
+    setTimeout(() => {
+        form.reset();
+    }, 1200);
 });
