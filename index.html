@@ -2,72 +2,44 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arise Tech - Join Us</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Arise Tech</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="particles-js"></div>
-
     <div class="main-card">
-        <div class="brand">
-            <h1>ARISE TECH</h1>
-            <p>مجتمع صناع المستقبل</p>
-        </div>
-
+        <div class="brand"><h1>ARISE TECH</h1><p>مجتمع صناع المستقبل</p></div>
         <div id="form-content">
-            <div class="intro-text">
-                نحن لا نكتفي باستخدام التقنية، بل <b>نصنعها</b>.<br>انضم إلينا الآن لتبدأ رحلتك.
-            </div>
-
+            <div class="intro-text">نحن لا نكتفي باستخدام التقنية، بل <b>نصنعها</b>.</div>
             <form id="contact-form">
-                <div class="form-group"><input type="text" name="name" placeholder="الاسم الثلاثي" required></div>
-                <div class="form-group"><input type="number" name="age" placeholder="العمر" required></div>
-                <div class="form-group"><input type="tel" name="whatsapp" placeholder="رقم الواتساب (+...)" required></div>
-                <div class="form-group">
-                    <select name="level" required>
-                        <option value="" disabled selected>مستواك في البرمجة؟</option>
-                        <option value="beginner">مبتدئ (من الصفر)</option>
-                        <option value="intermediate">متوسط</option>
-                        <option value="advanced">متقدم</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">إرسال الطلب الآن</button>
+                <input type="text" placeholder="الاسم الثلاثي" required>
+                <input type="number" placeholder="العمر" required>
+                <input type="tel" placeholder="رقم الواتساب بمفتاح الدولة" required>
+                <select required>
+                    <option value="" disabled selected>مستواك في البرمجة؟</option>
+                    <option value="0">مبتدئ</option>
+                    <option value="1">متوسط</option>
+                </select>
+                <button type="submit" class="submit-btn">انضم للرفقة الآن</button>
             </form>
         </div>
-
-        <div id="success-container" style="display: none;">
-            <span class="success-icon">✔️</span>
-            <h2>تم استلام طلبك!</h2>
-            <p>جاري تحويلك للمجموعة...</p>
-            <div class="countdown-box">انتظر <span id="countdown">3</span> ثوانٍ...</div>
+        <div id="success-container" style="display:none">
+            <span class="success-icon">✔️</span><h2>تم الاستلام!</h2>
+            <div class="countdown-box">تحويل تلقائي خلال <span id="countdown">3</span> ثوانٍ...</div>
         </div>
-
         <div class="leadership">
-            <span class="leadership-title">تواصل مباشر مع الإدارة</span>
-            
             <a href="https://wa.me/96597805334" class="leader-link leader-jin">
-                <img src="80997.jpg" class="leader-avatar" alt="Founder">
-                <div class="leader-info">
-                    <span class="leader-name">سونغ جين وو</span>
-                    <span class="leader-role">مؤسس Arise Tech</span>
-                </div>
-                <div class="wa-badge">WA</div>
+                <img src="https://raw.githubusercontent.com/SongJinwoo1/Arise-Tech/848a4b7010596b8759551256f4c5e15432e02e6f/IMG_4768.jpeg" class="leader-avatar">
+                <div class="leader-info"><span class="leader-name">سونغ جين وو</span><span class="leader-role">مؤسس Arise Tech</span></div>
             </a>
-
             <a href="https://wa.me/201055719273" class="leader-link leader-ayano">
-                <img src="80798.webp" class="leader-avatar" alt="Strategist">
-                <div class="leader-info">
-                    <span class="leader-name">أيانوكوجي كيوتاكا</span>
-                    <span class="leader-role">المنسق الاستراتيجي</span>
-                </div>
-                <div class="wa-badge">WA</div>
+                <img src="https://raw.githubusercontent.com/SongJinwoo1/Arise-Tech/848a4b7010596b8759551256f4c5e15432e02e6f/IMG_4767.jpeg" class="leader-avatar">
+                <div class="leader-info"><span class="leader-name">أيانوكوجي كيوتاكا</span><span class="leader-role">المنسق الاستراتيجي</span></div>
             </a>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
